@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Myopic</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent') //it will acces the parent element
+    console.log(parent);
+    console.log(parent.children); //it will give collection of element
+    console.log(parent.children[1].innerHTML);  //it will give the elemnt which is on 1st index which is TUESDAY
+    
+    //it will print the all element 
+    for(let i=0; i<parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+     
+    parent.children[1].style.color = "orange"  //it will change the color of element which is on 1st index.
+    console.log(parent.firstElementChild);  //it will give the first child element means MONDAY 
+    console.log(parent.lastElementChild);   //it will give the last child element means THURSDAY
+
+    //In above all eg we moved parent to child but we can also move child to parent letts see
+    const dayOne = document.querySelector('.day');
+    const dayAll = document.querySelectorAll('.day');
+    console.log(dayOne);
+    console.log(dayAll);
+
+    console.log(dayOne.parentElement);  //it will print entire parent element   
+    console.log(dayOne.nextElementSibling);  //it gives the sibling element means next element
+
+    console.log("NODES: ", parent.childNodes);  //NodeList is a useful object for representing collections of entire nodes in the DOM
+    
+</script>
+</html>
